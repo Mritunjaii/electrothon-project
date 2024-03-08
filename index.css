@@ -1,0 +1,155 @@
+body {
+	background-color: #000000e2;
+	width: 400px;
+	padding: 0px 0px 40px 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#video-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -20;
+}
+
+#content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: #fff;
+}
+
+
+#title {
+	text-align: center;
+	font-size: 40px;
+	color: white;
+	font-weight: bold;
+}
+
+#tagline {
+	text-align: center;
+	font-size: 16px;
+	color: white;
+	margin-top: -24px;
+}
+
+#button_container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn {
+	background-color: #eeeeee47;
+	border-radius: 8px;
+	border: none;
+	color: #ffffff;
+	padding: 10px 32px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	cursor: pointer;
+	margin-top: 30px;
+	font-weight: bold;
+}
+
+.btn:hover {
+	background-color: #cccccc;
+	transition-duration: 0.2s;
+}
+
+.btn:disabled {
+	background-color: #bbbbbb;
+	cursor: default;
+}
+
+#add_key {
+	text-align: center;
+	font-size: 18px;
+	color: white;
+}
+
+#get_key {
+	text-align: center;
+	font-size: 14px;
+	color: white;
+	margin-top: -10px;
+}
+
+.link {
+	color: #eeeeee;
+}
+
+#key_input {
+	width: 100%;
+	border-radius: 8px;
+	border: none;
+	padding: 12px 32px;
+	text-align: center;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+#key_input:focus {
+	outline: none;
+}
+
+#key_entered {
+	display: none;
+}
+
+#domain {
+	display: none;
+	font-size: 18px;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+}
+
+#privacy_summary {
+	display: none;
+	white-space: pre-wrap;
+	text-align: left;
+	max-height: 200px;
+	max-width: 320px;
+	overflow-y: scroll;
+	padding: 8px;
+	font-size: 14px;
+	color: white;
+	margin-top: -10px;
+}
+
+#change_key_button {
+	position: absolute;
+	bottom: 10;
+	left: 10;
+	background-color: transparent;
+	color: #eeeeee;
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+#change_key_button:hover {
+	color: #cccccc;
+	transition-duration: 0.2s;
+}
+.box{
+	padding: 50px;
+	height: auto;
+	width: auto;
+	background-color: #f5f5f550;
+	border-radius: 20px;
+}
