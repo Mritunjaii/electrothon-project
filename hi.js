@@ -38,7 +38,20 @@ const summarizePrivacyPolicy = async () => {
 document.getElementById("summarize_privacy_button").addEventListener("click", summarizePrivacyPolicy);
 
 const generateCompletionAction = async (url) => {
-    console.log("hello there")
+
+    summary_result=console.log("hello there")
+    displayPrivacySummary(url, summary_result);
 
 
+};
+
+
+const displayPrivacySummary = (url, summary_result) => {
+    let domain = new URL(url);
+    domain = domain.hostname;
+
+    document.getElementById("domain").innerHTML = domain;
+    document.getElementById("domain").style.display = "block";
+    document.getElementById("privacy_summary").innerHTML = "Suspicious red flags and warning signs:\n" + summary_result;
+    document.getElementById("privacy_summary").style.display = "block";
 };
