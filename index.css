@@ -64,7 +64,7 @@ body {
 }
 
 .btn:hover {
-	background-color: #cccccc;
+	background-color: #0ce69996;
 	transition-duration: 0.2s;
 }
 
@@ -146,7 +146,8 @@ body {
 	color: #cccccc;
 	transition-duration: 0.2s;
 }
-.box{
+
+.box {
 	padding: 50px;
 	height: auto;
 	width: auto;

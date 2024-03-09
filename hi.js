@@ -38,11 +38,17 @@ const summarizePrivacyPolicy = async () => {
 document.getElementById("summarize_privacy_button").addEventListener("click", summarizePrivacyPolicy);
 
 const generateCompletionAction = async (url) => {
+    try {
+        const basePromptPrefix = "i am giving you url of website explain its privacy policy in 10 points only give points dont give any extra text and tell how much percentage website is suspious "
+        const baseCompletion = await generate(`${basePromptPrefix} ${url}\n`);
 
-    const summary_result="hello there"
-    displayPrivacySummary(url, summary_result);
-
-
+        if (baseCompletion) {
+            const summary_result = baseCompletion;
+            displayPrivacySummary(url, summary_result);
+        }
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 
@@ -55,3 +61,33 @@ const displayPrivacySummary = (url, summary_result) => {
     document.getElementById("privacy_summary").innerHTML = "Suspicious red flags and warning signs:\n" + summary_result;
     document.getElementById("privacy_summary").style.display = "block";
 };
+
+
+
+const generate = async (urr) => {
+    const url = `http://localhost:5000/`;
+    try {
+        const response = await fetch(url, {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify({ data: urr }),
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        document.getElementById("privacy_summary").innerText=data.message;
+        document.getElementById("privacy_summary").style.display = "block";
+        
+    
+    } catch (error) {
+        console.error(`Fetch error: ${error.message}`);
+    }
+};
+
+
+
