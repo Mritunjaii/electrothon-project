@@ -38,5 +38,7 @@ const summarizePrivacyPolicy = async () => {
 document.getElementById("summarize_privacy_button").addEventListener("click", summarizePrivacyPolicy);
 
 const generateCompletionAction = async (url) => {
+    console.log("hello there")
+
 
 };
