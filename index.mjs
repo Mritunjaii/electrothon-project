@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 
-const openai = new OpenAI({ apiKey: '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' });
+const openai = new OpenAI({ apiKey: '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' });
 
 
 
@@ -9,13 +9,8 @@ const openai = new OpenAI({ apiKey: 'sk-EWnS0Z4y8kWrUTHHO5XtT3BlbkFJ88pGl4v6myJ2
 
 
 const generate = async (prompt) => {
-    // Get your API key from storage
-    // const key = await getKey();
-
     
-    const apiUrl = "https://api.openai.com/v1/chat/completions"; // Replace with the appropriate API endpoint for GPT-3.5 Turbo
-
-    // Call completions endpoint
+    const apiUrl = "https://api.openai.com/v1/chat/completions"; 
     try {
         const completionResponse = await openai.chat.completions.create({
             messages: [{ role: "system", content: "You are a helpful assistant." },
@@ -23,7 +18,6 @@ const generate = async (prompt) => {
             ],
             model: "gpt-3.5-turbo",
         });
-        // Select the top choice and send back
         
         return completionResponse.choices[0]["message"]["content"];
     } catch (error) {
@@ -36,14 +30,6 @@ const generate = async (prompt) => {
 
 
 
-
-// ... (existing code)
-
-// Export functions for use in other scripts
-
-// Attach the event listener to the button after the document is loaded
-
-// server.mjs
 import http from 'http';
 import express from 'express';
 import cors from 'cors';
@@ -51,7 +37,6 @@ import cors from 'cors';
 const app = express();
 const server = http.createServer(app);
 
-// Enable CORS for all routes
 app.use(cors());
 app.use(express.json());
 
