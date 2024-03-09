@@ -39,7 +39,7 @@ document.getElementById("summarize_privacy_button").addEventListener("click", su
 
 const generateCompletionAction = async (url) => {
 
-    summary_result=console.log("hello there")
+    summary_result="hello there"
     displayPrivacySummary(url, summary_result);
 
 
